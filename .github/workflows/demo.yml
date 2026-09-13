@@ -1,0 +1,17 @@
+name: Demo Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      mensaje:
+        description: "Automatización con GitHub Actions."
+        required: true
+        default: "Hola desde GitHub Actions"
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Mostrar mensaje
+        run: echo "${{ github.event.inputs.mensaje }}"
